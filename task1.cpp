@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	int arr[] = { 1, 45, 54, 71, 76, 12 };
+	int arr[] = { 1, 8, 6 };
 
 	int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -17,12 +17,7 @@ int main()
 		<< *min_element(arr, arr + n);
 
 	cout << "\nMax Element = "
-		<< *max_element(arr, arr + n);
-	int &min = *min_element(arr,arr+n );
-	int &max = *max_element(arr,arr+n );
-	cout<<"\nFinding the Element using address variable";
-	cout<<"\nMin Element = "<<min;
-	cout<<"\nMax Element = "<<max;
+		<< *max_element(arr, arr + n) << endl;
 	return 0;
 }
 
