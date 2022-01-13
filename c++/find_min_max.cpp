@@ -23,13 +23,13 @@ int minimum(int min[],int size){
 }
 
 
-int maximum(int min[],int size){
-   int m = min[0];
-    for(int i = 0 ; i < size;i++){
-       if(m < min[i]){
-          m = min[i];
-       }
-    }
+int maximum(int max[],int size){
+   int m = max[0];
+   for(int i = 0 ; i < size;i++){
+      if(m < max[i]){
+         m = max[i];
+      }
+   }
    return m;
 }
 
