@@ -49,12 +49,6 @@ int main(){
    cout << "Enter size: ";
    cin >> size;
    Vector<int> V;
-  /* do { 
-      V.addNum();
-      cout << "If you want add element press 1: ";
-      cin >> ans;
-      i++;
-   } while(ans == "n");*/
    for(int i = 1;i < size;i++){
        V.addNum();
    }
