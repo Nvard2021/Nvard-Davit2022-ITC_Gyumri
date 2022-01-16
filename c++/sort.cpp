@@ -1,6 +1,6 @@
 #include <iostream>
-
-int* sortNum(int[],int);
+template <typename T>
+T* sortNum(T[],int);
 
 int main(){
   int num[3] = {1,8,6};
@@ -11,8 +11,8 @@ int main(){
   }
 }
 
-
-int* sortNum(int num[],int size){
+template <typename T>
+T* sortNum(T num[],int size){
     for(int i = 0;i < size;i++){
      for(int j = 0; j < size; j++){
        if(num[j] > num[j+1]){

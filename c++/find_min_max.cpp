@@ -1,30 +1,33 @@
 #include <iostream>
 
-int minimum(int[],int);
-int maximum(int[],int); 
+template <typename T>
+T minimum(T[],int);
+template <typename U>
+U maximum(U[],int); 
 
 int main(){
-  int min[3] = {10,8,6};
-  int max[3] = {1,8,6};
-  int sizeN = sizeof(min)/sizeof(int); 
-  int sizeM = sizeof(max)/sizeof(int); 
-  std::cout << minimum(min,sizeN) <<"\n";
-  std::cout << maximum(max,sizeM) <<"\n";
+  float min[3] = {10,8,6};
+  float max[3] = {1,8.7,6};
+  int sizeN = sizeof(min)/sizeof(int);
+  int sizeM = sizeof(max)/sizeof(int);
+  std::cout << minimum<float>(min,sizeN) <<"\n";
+  std::cout << maximum<float>(max,sizeM) <<"\n";
 }
 
-int minimum(int min[],int size){
-  int m = min[0];
+template <typename T>
+T minimum(T min[],int size){
+  T m = min[0];
   for(int i = 0 ; i < size;i++){
-    if(m > min[i]){
+    if(min[i] < m){
        m = min[i];
     }
   }
   return m;
 }
 
-
-int maximum(int max[],int size){
-   int m = max[0];
+template <typename U>
+U maximum(U max[],int size){
+   U m = max[0];
    for(int i = 0 ; i < size;i++){
       if(m < max[i]){
          m = max[i];

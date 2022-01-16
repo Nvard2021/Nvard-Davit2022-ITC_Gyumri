@@ -2,25 +2,32 @@
 
 using namespace std;
 
-int strlen(char *);
-char *LowerStr(char *);
+template <typename T>
+T* LowerStr(T[]);
+int strLen(char[]);
 
 int main(){
   char str[8] = "HELLO";
-  cout << LowerStr(str) <<"\n";
+  int size = strLen(str);
+  char *arr = LowerStr(str);
+  for(int i = 0;i < size;i++){
+       cout << arr[i];
+  }
+  cout <<"\n";
 }
 
-int strlen(char* str){
+int strLen(char str[]){
    int length = 0;
    while(str[length] != '\0'){
-       ++length;
+     length++;  
    }
    return length;
 }
 
-char *LowerStr(char* str){
-  int length = strlen(str); 
-  for(int i = 0; i< length;i++){
+template <typename T>
+T* LowerStr(T str[]){
+  int size = strLen(str);
+  for(int i = 0; i< size;i++){
   if(str[i] >='A' && str[i] <= 'Z'){
       str[i] = str[i] + 32; 
   }

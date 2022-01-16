@@ -2,12 +2,19 @@
 
 using namespace std;
 
+template <typename T>
+T* UpperStr(T[]);
 int strlen(char *);
-char *UpperStr(char *);
 
 int main(){
   char str[8] = "hello";
-  cout << UpperStr(str) <<"\n";
+  int size = strlen(str);
+
+  char *arr = UpperStr(str);
+  for(int i = 0;i < size; i++){
+     cout << arr[i];
+  }
+  cout <<"\n";
 }
 
 int strlen(char* str){
@@ -18,8 +25,8 @@ int strlen(char* str){
    return length;
 }
 
-
-char *UpperStr(char* str){
+template <typename T>
+T* UpperStr(T str[]){
   int length = strlen(str); 
   for(int i = 0; i< length;i++){
   if(str[i] >= 'a' && str[i] <= 'z'){

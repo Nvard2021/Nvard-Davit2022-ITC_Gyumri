@@ -1,7 +1,8 @@
 #include <iostream>
 
+template <typename T>
+T* strReplace(T[],char,char,bool);
 int strLength(char[]);
-char *strReplace(char[],char,char,bool);
 
 int main(){
   char str[8] = "hello";
@@ -25,14 +26,15 @@ int strLength(char str[]){
   return len;
 }
 
-char *strReplace(char str[],char old,char newr,bool replaceAll){
+template <typename T>
+T* strReplace(T str[],char old,char newr,bool replaceAll){
     int length = strLength(str);
     for(int i=0;i<length;i++){
-    if(replaceAll){
+     if(replaceAll){
       if(str[i] == old){
-          str[i] = newr;
+         str[i] = newr;
       }
-    } else {
+     } else {
        if(str[i] == old){
           str[i] = newr;
           if(true){
