@@ -15,7 +15,7 @@ class List {
 
 	void add_node_head(int d){
 		Node* node = new Node();
-
+		
 		node->data = d;
 		node->next = NULL;
 		if (head == NULL) {
@@ -29,6 +29,13 @@ class List {
 		}
 	}
 	
+	void delete_node(){
+		Node* temp =  head;
+		head = head->next;
+		delete temp;
+		//temp = head->next;
+	}
+	
 	void print_list () {
 		Node* current = head;
 		while (current != NULL){
@@ -37,7 +44,6 @@ class List {
 		}
 	}
 };
-
 
 int main(){
 	int d;
@@ -49,5 +55,9 @@ int main(){
 	ls.add_node_head(6);
 	ls.add_node_head(9);
 	ls.add_node_head(3);
+	std::cout << "Add node " << std::endl;
+	ls.print_list();
+	ls.delete_node();
+	std::cout << "Delete node " << std::endl;
 	ls.print_list();
 }
