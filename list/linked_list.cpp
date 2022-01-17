@@ -7,6 +7,7 @@ struct Node
 {
     int data;
     Node *next;
+    Node *prev;
 };
 
 class List
@@ -90,7 +91,6 @@ public:
         Node* temp = head;
         head = head->next;
         delete temp;
-
         }
 
     void deleteFomTail() { 
@@ -126,6 +126,13 @@ public:
         {
             cout << current->data << endl;
             current = current->next;
+        }
+    }
+    ~List(){
+        while(head != NULL){
+            Node* temp = head;
+            head = head->next;
+            delete temp;
         }
     }
 };
