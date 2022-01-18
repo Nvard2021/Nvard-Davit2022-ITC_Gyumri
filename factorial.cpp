@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int factorial(int);
+template<typename T>
+T factorial(T);
 
 int main() {
     int n, result;
@@ -14,7 +15,8 @@ int main() {
     return 0;
 }
 
-int factorial(int n) {
+template<typename T>
+T factorial(T n) {
     if (n > 1) {
         return n * factorial(n - 1);
     } else {
