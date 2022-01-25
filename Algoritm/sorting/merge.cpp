@@ -1,18 +1,45 @@
 #include <iostream>
 //using namespace std;
 
+void merge(int arr[], int left_el, int right_el, int size_arr);
+void merge_sort(int arr[], int lt, int rt);
+void printArray(int A[], int size);
+
+int main() {
+	int k;
+	std::cout << "Enter your array ";
+	std::cin >> k;
+	int arr[k] = {};
+	std::cout << "Input " << k << " size array" << std::endl;
+		for (int h = 0; h < k; h++){
+			std::cin >> arr[h];
+		}	
+	int arr_size = sizeof(arr) / sizeof(arr[0]);
+
+	std::cout << "Input array is " << std::endl;
+	printArray(arr, arr_size);
+
+	merge_sort(arr, 0, arr_size - 1);
+
+	std::cout << std::endl;
+	std::cout << "Sorted array is " << std::endl;
+	printArray(arr, arr_size);
+	std::cout << std::endl;
+	return 0;
+}
+
 void merge(int arr[], int left_el, int right_el, int size_arr){
 	int left_node = right_el - left_el + 1;
 	int right_node = size_arr - right_el;
 
 	int left[left_node], right[right_node];
 
-	for (int i = 0; i < left_node; i++)
+	for (int i = 0; i < left_node; i++){
 		left[i] = arr[left_el + i];	
-
-	for (int j = 0; j < right_node; j++)
+	}
+	for (int j = 0; j < right_node; j++){
 		right[j] = arr[right_el + 1 + j];
-	
+	}
 	int i, j, arr_index;
 		i = 0;
 		j = 0;
@@ -53,31 +80,7 @@ void merge_sort(int arr[], int lt, int rt) {
 	}
 }
 
-void printArray(int A[], int size)
-{
-	for (auto i = 0; i < size; i++)
+void printArray(int A[], int size) {
+	for (int i = 0; i < size; i++)
 		std::cout << A[i] << " ";
-}
-
-int main() {
-	int k;
-	std::cout << "Enter your array " << std::endl;
-	std::cin >> k;
-	int arr[k] = {};
-	std::cout << "Input " << k << " size array" << std::endl;
-		for (int h = 0; h < k; h++){
-			std::cin >> arr[h];
-		}	
-	auto arr_size = sizeof(arr) / sizeof(arr[0]);
-
-	std::cout << "Given array is " << std::endl;
-	printArray(arr, arr_size);
-
-	merge_sort(arr, 0, arr_size - 1);
-
-	std::cout << std::endl;
-	std::cout << "Sorted array is " << std::endl;
-	printArray(arr, arr_size);
-	std::cout << std::endl;
-	return 0;
 }
