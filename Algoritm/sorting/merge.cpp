@@ -1,5 +1,4 @@
 #include <iostream>
-//using namespace std;
 
 void merge(int arr[], int left_el, int right_el, int size_arr);
 void merge_sort(int arr[], int lt, int rt);
@@ -55,13 +54,11 @@ void merge(int arr[], int left_el, int right_el, int size_arr){
 		}
 		arr_index++;
 	}
-
 	while (i < left_node){
 		arr[arr_index] = left[i];
 		i++;
 		arr_index++;
 	}
-
 	while (j < right_node){
 		arr[arr_index] = right[j];
 		j++;
@@ -71,11 +68,9 @@ void merge(int arr[], int left_el, int right_el, int size_arr){
 
 void merge_sort(int arr[], int lt, int rt) {
 	if (lt < rt){
-		int middle = lt + (rt - lt) / 2;
-		
+		int middle = lt + (rt - lt) / 2;	
 		merge_sort(arr, lt, middle);
 		merge_sort(arr, middle + 1, rt);
-
 		merge(arr, lt, middle, rt);
 	}
 }

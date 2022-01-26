@@ -27,6 +27,7 @@ void buble_sorts(int a[]) {
 	int i;
 	for(int h = 0; h < i; h++) {
 		for(int k = 0; k < (i-h-1); k++) {
+		std::cout << a << std::endl;
 			if(a[k] > a[k+1]) {
 				int temp = a[k];
 				a[k] = a[k+1];
