@@ -1,30 +1,30 @@
 #include <iostream>
 
-void shell_sort(int array[], int n);
+void shell_sort(int array[], int lenght);
 void print(int array[], int size);
 
 int main() {
 	int lenght;
 	std::cout << "Input array lenght ";
 	std::cin >> lenght;
-  int data[lenght];
+  int arr[lenght];
 	std::cout << "Input " << lenght  << " array data " << std::endl;
 	for (int l = 0; l < lenght; l++){
-		std::cin >> data[l];
+		std::cin >> arr[l];
 	}
-  int size = sizeof(data) / sizeof(data[0]);
-  shell_sort(data, size);
+  int size = sizeof(arr) / sizeof(arr[0]);
+  shell_sort(arr, size);
   std::cout << "Sorted array: \n";
-  print(data, size);
+  print(arr, size);
 }
 
-void shell_sort(int array[], int n) {
-  for (int interval = n / 2; interval > 0; interval = interval / 2) {
-    for (int i = interval; i < n; i++) {
+void shell_sort(int array[], int lenght) {
+  for (int gap = lenght / 2; gap > 0; gap = gap / 2) {
+    for (int i = gap; i < lenght; i++) {
       int temp = array[i];
       int j;
-      for (j = i; j >= interval && array[j - interval] > temp; j = j - interval) {
-        array[j] = array[j - interval];
+      for (j = i; j >= gap && array[j - gap] > temp; j = j - gap) {
+        array[j] = array[j - gap];
       }
       array[j] = temp;
     }
