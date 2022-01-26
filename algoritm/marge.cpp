@@ -58,7 +58,7 @@ int main ()
     std::cout<<"Sorted array\n";
     for (int i = 0; i < num; i++)
     {
-        std::cout<<myarray[i]<<"\t";
+        std::cout << "|" << myarray[i] << "|" <<"\t";
     }
 return 0;
 }
