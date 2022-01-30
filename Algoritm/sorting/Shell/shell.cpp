@@ -27,6 +27,11 @@ int shellsort(int arr[], int size)
 			for (gap = i; gap >= interval && arr[gap - interval] > temp; gap -= interval)
 			{
 				arr[gap] = arr[gap - interval];
+				for (int i = 0; i < size; i++)
+				{
+					cout << "sort" << endl;
+					cout << "index " << i << " : " << arr[i] << endl;
+				}
 			}
 			arr[gap] = temp;
 		}
@@ -35,7 +40,7 @@ int shellsort(int arr[], int size)
 }
 int main()
 {
-	int arr[5];
+	int arr[9];
 	int size = sizeof(arr) / sizeof(int);
 	input_elements(arr, size);
 	printArray(arr, size);
