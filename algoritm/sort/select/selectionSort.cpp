@@ -5,27 +5,27 @@ void selectionSort(int[],int);
 void printArr(int[],int);
 
 int main(){
-   int arr[6] = {5,10,6,7,9,4};
+   int arr[7] = {5,10,8,6,7,9,4};
    int size = sizeof(arr)/sizeof(int);
    selectionSort(arr,size);
    printArr(arr,size);
 }
 
 void selectionSort(int arr[],int size){
-   int small;
-   for(int i = 0;i < size-1; i++){
-     small=i;
-     for(int j = i+1;j<size;j++){
-      if(arr[j] < arr[small])
+   for(int i = 0;i < size; i++){
+     int small=i;
+     for(int j = i+1;j< size;j++){
+       if(arr[j] < arr[small]){
         small = j;
-      
-        int temp = arr[small];
-        arr[small] = arr[i];
-        arr[i] = temp;
-      
-    } 
-   }
+       }
+     }
+
+     int temp = arr[i];
+     arr[i] = arr[small];
+     arr[small] = temp;      
+  } 
 }
+
 
 
 void printArr(int arr[],int size){

@@ -14,7 +14,7 @@ int main(){
 void shellSort(int arr[],int size){
   int gap = size / 2;
    while(gap > 0){
-    for(int i = gap;i <size;i++){
+    for(int i = gap;i < size;i++){
       int j = i;
       int temp = arr[i];
       while(j >= gap && arr[j-gap] > temp){
@@ -23,6 +23,7 @@ void shellSort(int arr[],int size){
       }
       arr[j] = temp;
     }
+    gap = gap/2;
   }
 }
 
