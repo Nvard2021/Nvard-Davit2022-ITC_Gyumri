@@ -51,7 +51,6 @@ void Bellman_ford(struct Graph *graph, int start)
     {
         for (int j = 0; j < E; j++)
         {
-            // Get the edge data
             int start = graph->edge[j].start;
             int end = graph->edge[j].end;
             int weight = graph->edge[j].weight;
