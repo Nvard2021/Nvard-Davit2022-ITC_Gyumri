@@ -20,12 +20,3 @@ for i in range(2,rown):
 print(dp)
 
 
-
-# 1
-# 11
-# 121
-# 1331
-
-# dp[2][1] = dp[1][0] + dp[i][1];
-# dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
-# 
